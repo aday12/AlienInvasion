@@ -1,15 +1,16 @@
 import java.util.Scanner;
 
-class QuitGame {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+public class QuitGame {
+    private static Scanner scan = new Scanner(System.in);
 
+    public void quitGame() {
         System.out.println("Type [Q]uit at any time to end the game!");
+        String userInput = scan.nextLine().trim();
+        System.out.println("Enter a verb or a verb + a noun to interact: ");
 
-        String userInput = scan.nextLine().trim().toUpperCase();
-
-        if (userInput.equals("Q")) {
+        if (userInput.equalsIgnoreCase("Q")) {
             System.exit(0);
         }
+        scan.close();
     }
 }

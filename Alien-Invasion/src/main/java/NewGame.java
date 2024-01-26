@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class NewGame {
+public class NewGame {
     private static boolean isNewGame;
     private static String openingMessage = "Would you like to start a new game? (yes/no)";
     private static Scanner scanner = new Scanner(System.in);

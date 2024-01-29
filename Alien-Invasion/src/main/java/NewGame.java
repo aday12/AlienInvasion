@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
-class NewGame {
+public class NewGame {
     private static boolean isNewGame;
     private static String openingMessage = "Would you like to start a new game? (yes/no)";
     private static Scanner scanner = new Scanner(System.in);
 
     public boolean gameStart() {
         System.out.println(openingMessage);
-        String response = scanner.next().trim().toLowerCase();
+//        String response =
+        System.out.print("> ");
+        String response = scanner.next();
+        response = response.toLowerCase().trim();
 
         switch (response) {
             case "yes":

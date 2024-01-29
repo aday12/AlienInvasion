@@ -7,7 +7,10 @@ public class NewGame {
 
     public boolean gameStart() {
         System.out.println(openingMessage);
-        String response = scanner.next().trim().toLowerCase();
+//        String response =
+        System.out.print("> ");
+        String response = scanner.next();
+        response = response.toLowerCase().trim();
 
         switch (response) {
             case "yes":

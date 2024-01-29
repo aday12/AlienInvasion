@@ -14,5 +14,11 @@ public class Help {
                 System.out.println(word);
             }
         }
+//        if (scanner.equals("help") || scanner.equals("h")) {
+//            for (String word : helpWords) {
+//                System.out.println(word);
+//            }
+//        }
+
     }
 }

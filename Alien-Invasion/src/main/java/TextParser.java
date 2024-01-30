@@ -1,18 +1,29 @@
 import java.util.Scanner;
 
-class TextParser {
-    private static Scanner scan = new Scanner(System.in);
+public class TextParser {
 
-    private void textParser() {
-        System.out.println("What do you do next?");
-        String userInput = scan.nextLine().trim();
+    public static void textParser(String userInput) {
+
+//            switch (userInput) {
+//                case "quit":
+//                case "q":
+//                    QuitGame.quitGame();
+//                case "help":
+//                case "h":
+//                    Help.displayHelp();
+//            }
 
         String[] cmd = userInput.split(" ");
-        System.out.println("Verb: " + cmd[0]);
-        System.out.println("Noun: " + cmd[1]);
+        if (InvalidInput.checkValidInput(cmd[0]) && InvalidInput.checkValidInput(cmd[1])) {
+            ExamineItems.examine(userInput);
+            if (userInput.equals("q") || userInput.equals("quit")) {
+                QuitGame.quitGame();
+            } else if (userInput.equals("h") || userInput.equals("help")){
+                Help.displayHelp();
+            }
+        }
         if (cmd.length > 2) {
             System.out.println("Please only enter 1 verb or 1 verb and 1 noun");
         }
-        scan.close();
     }
 }

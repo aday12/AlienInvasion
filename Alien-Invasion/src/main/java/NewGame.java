@@ -5,9 +5,8 @@ public class NewGame {
     private static String openingMessage = "Would you like to start a new game? (yes/no)";
     private static Scanner scanner = new Scanner(System.in);
 
-    public boolean gameStart() {
+    public static boolean gameStart() {
         System.out.println(openingMessage);
-//        String response =
         System.out.print("> ");
         String response = scanner.next();
         response = response.toLowerCase().trim();
@@ -24,7 +23,6 @@ public class NewGame {
             default:
                 System.out.println("Invalid input. Please enter 'yes' or 'no'.");
         }
-
         return isNewGame;
     }
 

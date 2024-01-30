@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class ExamineItems {
 
 
-    public static void examine(Scanner scanner){
-        String[] userInput = scanner.next().split(" ");
+    public static void examine(String item) {
 //        String[] userInput = {"look", "table"};
+        String[] userInput = item.split(" ");
         switch (userInput[0]) {
             case "look":
             case "examine":
@@ -18,6 +18,7 @@ public class ExamineItems {
         }
 
     }
+
     private static void handleExamine(String[] userInput) {
         int itemLocationInList = 0;
         String[] interactables = {"computer", "north-door", "west-door", "note", "trashcan", "table", "slime", "goo", "board", "blank-board"};
@@ -32,7 +33,7 @@ public class ExamineItems {
                 " small trashcan discreetly occupies its space. A crumpled piece of paper peeks out, hinting at the discarded remnants of decisions made and messages received. It might be " +
                 "worth investigating, as even the smallest detail can hold significance in the vastness of space.", "As you stride towards the sturdy table on the right, " +
                 "holographic displays showcase intricate spaceship models and stellar charts. The surface is immaculate, reflecting the meticulous nature of the crew's planning. " +
-                "It appears to be a hub for discussions, strategic decisions, and the coordination of Battlestar Alactica's operations.","In the far left corner, a strange slime " +
+                "It appears to be a hub for discussions, strategic decisions, and the coordination of Battlestar Alactica's operations.", "In the far left corner, a strange slime " +
                 "lies on the floor. " +
                 "Its alien composition gleams in hues of iridescence, casting an otherworldly glow. The air around it seems charged with an enigmatic energy. Could this be the " +
                 "mysterious slime mentioned in the note you discovered earlier?", "In the far left corner, a strange slime lies on the floor. Its alien composition gleams in hues " +
@@ -43,7 +44,7 @@ public class ExamineItems {
                 "It's a canvas of possibilities, ready to be filled with mission plans, enemy encounters, and the destiny of Battlestar Alactica. The air around it seems charged with " +
                 "the weight of decisions yet to be made."};
         for (String item : interactables) {
-            if (userInput[1].toLowerCase().equals(item)){
+            if (userInput[1].toLowerCase().equals(item)) {
                 itemLocationInList = Arrays.asList(interactables).indexOf(item);
             }
         }

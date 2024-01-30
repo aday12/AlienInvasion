@@ -10,7 +10,7 @@ public class Controller {
             while (isGame) {
                 String userInput = scan.nextLine().trim();
                 TextParser.textParser(userInput);
-                }
             }
         }
     }
+}

@@ -1,17 +1,6 @@
-import java.util.Scanner;
-
 public class TextParser {
 
     public static void textParser(String userInput) {
-
-//            switch (userInput) {
-//                case "quit":
-//                case "q":
-//                    QuitGame.quitGame();
-//                case "help":
-//                case "h":
-//                    Help.displayHelp();
-//            }
 
         String[] cmd = userInput.split(" ");
 

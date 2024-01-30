@@ -8,6 +8,7 @@ public class Controller {
             AlienInvasionIntro.welcome();
             boolean isGame = true;
             while (isGame) {
+                System.out.print("> ");
                 PlayerLocation.location();
                 String userInput = scan.nextLine().trim();
                 TextParser.textParser(userInput);

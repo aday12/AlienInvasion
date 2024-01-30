@@ -1,33 +1,27 @@
-
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Scanner;
 
-class TitleScreen {
-    private static String filePath = "C:/Practical_Application/Sprint_One/Alien-Invasion/src/resources/title.txt";
+public class TitleScreen {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        displayAsciiArtFromFile(filePath);
-
-        System.out.println("Welcome to Alien InVasion");
-        System.out.println("Enter any key to continue!");
-
-        scanner.nextLine();
-        System.out.print("\033[H\033[2J"); // Clear the console
-
-
-    }
-
-    public static void displayAsciiArtFromFile(String filePath) {
+    public static void displayAsciiArt(String filePath) {
         try {
-            Files.lines(Paths.get(filePath)).forEach(System.out::println);
-        } catch (Exception e) {
-            e.printStackTrace();
+            // Read the ASCII art from the file
+            String asciiArt = readAsciiArt(filePath);
+
+            // Display the ASCII art
+            System.out.println(asciiArt);
+        } catch (IOException e) {
+            System.err.println("Error reading ASCII art file: " + e.getMessage());
         }
     }
+
+    private static String readAsciiArt(String filePath) throws IOException {
+        Path path = Paths.get(filePath);
+        byte[] bytes = Files.readAllBytes(path);
+        return new String(bytes, StandardCharsets.UTF_8);
+    }
 }
-
-
 

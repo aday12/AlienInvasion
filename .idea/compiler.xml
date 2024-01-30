@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PC2-AlienInvasion" />
         <module name="Alien-Invasion" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PC2-AlienInvasion" target="7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

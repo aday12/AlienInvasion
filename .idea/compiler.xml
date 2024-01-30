@@ -10,17 +10,5 @@
         <module name="Alien-Invasion" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Alien-Invasion" target="7" />
-      <module name="PC2-AlienInvasion" target="7" />
-    </bytecodeTargetLevel>
-        <module name="Sprint_One" />
-      </profile>
-    </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Alien-Invasion" options="--add-exports java.base/jdk.internal.icu.impl=ALL-UNNAMED" />
-    </option>
   </component>
 </project>

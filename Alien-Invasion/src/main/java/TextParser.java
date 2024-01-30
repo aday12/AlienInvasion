@@ -6,7 +6,12 @@ public class TextParser {
 
         if (cmd.length > 1) {
             if (InvalidInput.checkValidInput(cmd[0]) && InvalidInput.checkValidInput(cmd[1])) {
-                ExamineItems.examine(userInput);
+                switch (cmd[0]) {
+                    case "go" :
+                        Movement.processCommand(userInput);
+                    default :
+                        ExamineItems.examine(userInput);
+                }
             }
         }
         else if (cmd.length == 1) {

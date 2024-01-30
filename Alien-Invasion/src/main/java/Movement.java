@@ -1,21 +1,16 @@
 import java.util.Scanner;
 
 public class Movement {
-    public static void main(String[] args) {
-        Movement will = new Movement();
-        will.startPosition();
-        System.out.println(will);
-        will.processCommand();
-    }
-    private int x_Axis = 0;
-    private int y_Axis = 0;
+
+    private static int x_Axis = 0;
+    private static int y_Axis = 0;
     private Scanner scanner = new Scanner(System.in);
 
-    public int getX_Axis() {
+    public static int getX_Axis() {
         return x_Axis;
     }
 
-    public int getY_Axis() {
+    public static int getY_Axis() {
         return y_Axis;
     }
 
@@ -27,10 +22,10 @@ public class Movement {
     }
 
 
-    public void processCommand() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter 'GO (north/south/west/east)' to move");
-        String command = scanner.nextLine();
+    public static void processCommand(String command) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter 'GO (north/south/west/east)' to move");
+//        String command = scanner.nextLine();
 
         if (command.startsWith("go")) {
             String direction = command.substring(3).trim(); // Extract direction from the command
@@ -39,7 +34,7 @@ public class Movement {
             System.out.println("Invalid command!");
         }
     }
-    private void movePosition(String direction) {
+    public static void movePosition(String direction) {
         System.out.println("Enter (north/south/west/east)");
             switch (direction.toLowerCase()) {
                 case "north":

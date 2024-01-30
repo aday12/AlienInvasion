@@ -1,7 +1,7 @@
 public class InvalidInput {
     public static String[] validInputWords = {"look", "around", "observe", "inspect", "approach", "interact", "computer", "examine", "door", "read",
             "note", "check", "trashcan", "table", "inspect", "slime", "goo", "open", "take", "attack", "hit", "use", "interact", "discard",
-            "throw", "inventory", "items", "unlock", "analyze", "help"};
+            "throw", "inventory", "items", "unlock", "analyze", "help", "go", "north", "south", "east", "west"};
 
 
     private static boolean isValid = false;

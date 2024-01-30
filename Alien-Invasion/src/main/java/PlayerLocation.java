@@ -4,8 +4,8 @@ public class PlayerLocation {
 
         // Step1: Hard Code a location description
         System.out.println("** Current Location: Command Center **");
-        System.out.println(
-                "Description: You are in the main hub of the ship, surrounded by flashing consoles and crew members working diligently.");
+//        System.out.println(
+//                "Description: You are in the main hub of the ship, surrounded by flashing consoles and crew members working diligently.");
 
         // Step2: Set a variable with the location description and display it
 //        String locationDescription = "You find yourself in a dimly lit corridor, with eerie silence filling the air.";

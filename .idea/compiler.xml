@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Alien-Invasion (1)" />
         <module name="Alien-Invasion" />
       </profile>
     </annotationProcessing>

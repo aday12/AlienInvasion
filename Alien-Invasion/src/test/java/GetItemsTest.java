@@ -7,11 +7,11 @@ class GetItemsTest {
     @Test
     void isItemInteractactableShouldReturnTrue() {
         String getNote = "get note";
-        GetItems.isItemInteractactable(getNote);
+        GetItems.isItemInteractable(getNote);
 //        System.out.println(GetItems.getInventory());
         String getGoo = "get goo";
-        GetItems.isItemInteractactable(getGoo);
-        assertTrue(GetItems.isItemInteractactable(getGoo));
+        GetItems.isItemInteractable(getGoo);
+        assertTrue(GetItems.isItemInteractable(getGoo));
 
 //        System.out.println(GetItems.getInventory());
     }
@@ -19,6 +19,6 @@ class GetItemsTest {
     @Test
     void isItemInteractableShouldReturnFalse(){
         String getNothing = "get nothing";
-        assertFalse(GetItems.isItemInteractactable(getNothing));
+        assertFalse(GetItems.isItemInteractable(getNothing));
     }
 }

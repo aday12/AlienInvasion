@@ -4,10 +4,10 @@ import org.json.JSONTokener;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-class JSONInteraction {
+class ItemsJSON {
 
     public static void jsonReader(String item){
-        String path = "./static/gametext.json";
+        String path = "./static/items.json";
 
         try {
             FileReader fileReader = new FileReader(path);

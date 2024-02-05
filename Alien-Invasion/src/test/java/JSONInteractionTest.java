@@ -6,6 +6,7 @@ class JSONInteractionTest {
 
     @Test
     void jsonReader() {
-        JSONInteraction.jsonReader();
+        ExamineItems.examine("analyze board");
+        JSONInteraction.jsonReader(ExamineItems.getInteractable());
     }
 }

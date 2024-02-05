@@ -22,6 +22,9 @@ public class TextParser {
                 case "help":
                 case "h":
                     Help.displayHelp();
+                case "skip":
+                case "s":
+//                    throw Skip.methodSkipException("moving along");
             }
         }
         else {

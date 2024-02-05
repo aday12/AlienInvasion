@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Help {
     private static final String[] helpWords = {"look", "around", "observe", "inspect", "approach", "interact", "computer", "examine", "door", "read",
             "note", "check", "trashcan", "table", "inspect", "slime", "goo", "open", "take", "attack", "hit", "use", "interact", "discard",
-            "throw", "inventory", "items", "unlock", "analyze", "help", "quit"};
+            "throw", "inventory", "items", "unlock", "analyze", "help", "quit", "skip"};
 
 
     public static void displayHelp() {

@@ -1,28 +1,22 @@
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 
 class GameTextJSONParser {
-    public static void jsonReader(){
+    public static void jsonReader() {
         String path = "./static/storyText.json";
 
         try {
-            FileReader fileReader = new FileReader(path);
-            JSONTokener jsonTokener = new JSONTokener(fileReader);
+            // Create a Gson instance
+            Gson gson = new Gson();
 
-            JSONObject jsonObject = new JSONObject(jsonTokener);
+            // Read JSON data from the file into a JsonObject
+            JsonObject jsonObject = gson.fromJson(new FileReader(path), JsonObject.class);
 
-            //This can remain the same
-            JSONObject storyObject = jsonObject.getJSONObject("Story");
-
-            // We will want to generate this dynamically based on actual player location/ scene progression
-            JSONObject sceneObject = storyObject.getJSONObject("Scene 1");
-
-
-            // This will need to be dynamic based on whatever player has input
-            String story = sceneObject.getString("Story");
+            // Access specific properties in the JSON object
+            String story = jsonObject.getAsJsonObject("Story").getAsJsonObject("Scene 1").get("Story").getAsString();
 
             System.out.println(story);
 

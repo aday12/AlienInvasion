@@ -3,16 +3,13 @@ import org.json.JSONTokener;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class GetItems {
-    private static ArrayList<String> inventory = new ArrayList<>();
-
 
 
     public static boolean isItemInteractactable(String userInput) {
-        String path = "./static/gametext.json";
+        String path = "./static/items.json";
         boolean isItem = false;
         String[] input = userInput.trim().split(" ");
         if (input[0].equalsIgnoreCase("get")) {
@@ -30,7 +27,7 @@ public class GetItems {
                     String i = it.next();
                     if (i.equalsIgnoreCase(input[1])) {
                         isItem = true;
-                        inventory.add(i);
+                        Inventory.setInventory(i);
                         break;
                     }
 //                    System.out.println(i);
@@ -43,9 +40,5 @@ public class GetItems {
             }
         }
         return isItem;
-    }
-
-    public static ArrayList<String> getInventory() {
-        return inventory;
     }
 }

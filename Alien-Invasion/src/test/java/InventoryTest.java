@@ -17,4 +17,12 @@ class InventoryTest {
         assertEquals(expected, Inventory.getInventory());
 
     }
+
+    @Test
+    void displayInventory() {
+//        Inventory.setInventory("goo");
+//        Inventory.setInventory("note");
+        GetItems.isItemInteractable("get goo");
+        Inventory.displayInventory();
+    }
 }

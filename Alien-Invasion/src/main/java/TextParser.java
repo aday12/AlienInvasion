@@ -19,6 +19,7 @@ public class TextParser {
                 case "quit":
                 case "q":
                     QuitGame.quitGame();
+                    break;
                 case "help":
                 case "h":
                     Help.displayHelp();

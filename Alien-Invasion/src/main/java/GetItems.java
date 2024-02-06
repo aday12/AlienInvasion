@@ -1,41 +1,41 @@
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonElement;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class GetItems {
 
-
-    public static boolean isItemInteractactable(String userInput) {
+    public static boolean isItemInteractable(String userInput) {
         String path = "./static/items.json";
         boolean isItem = false;
         String[] input = userInput.trim().split(" ");
+
         if (input[0].equalsIgnoreCase("get")) {
-
             try {
-                FileReader fileReader = new FileReader(path);
-                JSONTokener jsonTokener = new JSONTokener(fileReader);
+                Gson gson = new Gson();
 
-                JSONObject jsonObject = new JSONObject(jsonTokener);
-                JSONObject locationObject = jsonObject.getJSONObject("location");
-                JSONObject commandObject = locationObject.getJSONObject("Command Center");
-                JSONObject itemsObject = commandObject.getJSONObject("items");
+                // Read JSON data from the file into a JsonObject
+                JsonObject jsonObject = gson.fromJson(new FileReader(path), JsonObject.class);
 
-                for (Iterator<String> it = itemsObject.keys(); it.hasNext(); ) {
-                    String i = it.next();
-                    if (i.equalsIgnoreCase(input[1])) {
+                JsonObject locationObject = jsonObject.getAsJsonObject("location");
+                JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
+                JsonObject itemsObject = commandObject.getAsJsonObject("items");
+
+                Set<Map.Entry<String, JsonElement>> entrySet = itemsObject.entrySet();
+
+                for (Map.Entry<String, JsonElement> entry : entrySet) {
+                    String itemName = entry.getKey();
+                    if (itemName.equalsIgnoreCase(input[1])) {
                         isItem = true;
-                        Inventory.setInventory(i);
+                        Inventory.setInventory(itemName);
                         break;
                     }
-//                    System.out.println(i);
                 }
-
-
-            } catch (
-                    FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }

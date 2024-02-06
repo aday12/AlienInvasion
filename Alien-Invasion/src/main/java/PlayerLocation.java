@@ -6,7 +6,7 @@ import java.util.List; // lists of objects
 public class PlayerLocation {
     private static LocationData locationData; // loaded json data
 
-    public static void main(String[] args) {
+    public static void location() {
         loadLocationData(); // load json data
 
         int currentLocationIndex = 0; // choose location index

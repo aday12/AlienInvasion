@@ -8,6 +8,7 @@ public class Controller {
         if (NewGame.gameStart()) {
 //            AlienInvasionIntro.welcome();
             boolean isGame = true;
+//            Help.displayHelp();
             while (isGame) {
                // PlayerLocation.location();
                 System.out.println("What's your next move Commander?");

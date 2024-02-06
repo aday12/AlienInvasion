@@ -6,8 +6,9 @@ import java.io.FileReader;
 
 public class ItemsJSON {
 
-    public static void jsonReader(String item) {
+    public static String jsonReader(String item) {
         String path = "./static/items.json";
+        String result = "That item does not exist";
 
         try {
             Gson gson = new Gson();
@@ -25,11 +26,11 @@ public class ItemsJSON {
             JsonObject itemsObject = commandObject.getAsJsonObject("items");
 
             // This will need to be dynamic based on whatever player has input
-            String items = itemsObject.get(item).getAsString();
+            result = itemsObject.get(item).getAsString();
 
-            System.out.println(items);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        return result;
     }
 }

@@ -17,7 +17,9 @@
         "board": "Turning to your right, another board comes into view. Filled with dynamic holographic displays and a myriad of annotations, it appears to be a strategic overview, detailing recent encounters and mission objectives. It's a visual tapestry of the ongoing narrative of Battlestar Alactica's odyssey.",
         "blank-board": "The blank board on your left dominates the wall, patiently awaiting the strategic orchestrations of the ship's commanders. It's a canvas of possibilities, ready to be filled with mission plans, enemy encounters, and the destiny of Battlestar Alactica. The air around it seems charged with the weight of decisions yet to be made.",
         "none": "There is no item to interact with..."
-      }
+      },
+      "available commands": "help, look, get, go (north, south, east, west), drop, examine, inspect, interact, analyze"
+
     },
     "Virtual Reality Chamber":
     {

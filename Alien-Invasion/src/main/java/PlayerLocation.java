@@ -89,7 +89,11 @@ import java.io.Reader; // Reader for file reading
 import java.io.FileReader; // FileReader for reading files
 import java.lang.reflect.Type; // Type for deserialization of List
 
+
+// nested functions within class for encapsulation purposes
+// also to ensure class has full control over how data is accessed/modified
 public class PlayerLocation {
+    private final static String filePath = "./static/gameLocations.json";
     public static LocationData locationData; // variable to store loaded JSON data
 
     public static void loadLocationData(String filePath) {// load
@@ -107,27 +111,13 @@ public class PlayerLocation {
         }
     }
 
-    public static void displayCurrentLocation() {
-        if (locationData == null) { // if not loaded, load data
-            loadLocationData();
-        }
-
-        List<Location> locations = locationData.getLocations();
-        int currentLocationIndex = 0;
-        Location currentLocation = locations.get(currentLocationIndex);
-
-        System.out.println("** Current Location: " + currentLocation.getLocation() + " **");
-        System.out.println("description: " + currentLocation.getDescription());
-    }
-
     public static class LocationData {
-        public List<Location> locations; // list of locations
+        public List<PlayerLocation.Location> locations; // list of locations
 
-        public List<Location> getLocations() {
+        public List<PlayerLocation.Location> getLocations() {
             return locations;
         }
-
-        public void setLocations(List<Location> locations) {
+        public void setLocations(List<PlayerLocation.Location> locations) {
             this.locations = locations;
         }
     }
@@ -156,5 +146,17 @@ public class PlayerLocation {
         public void setDescription(String description) {
             this.description = description;
         }
+    }
+
+    public static void displayCurrentLocation() {
+        if (locationData == null) { // if not loaded, load data
+            loadLocationData(filePath);
+        }
+        List<Location> locations = locationData.getLocations();
+        int currentLocationIndex = 0;
+        Location currentLocation = locations.get(currentLocationIndex);
+
+        System.out.println("** Current Location: " + currentLocation.getLocation() + " **");
+        System.out.println("description: " + currentLocation.getDescription());
     }
 }

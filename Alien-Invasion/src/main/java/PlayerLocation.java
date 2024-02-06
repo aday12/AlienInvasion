@@ -4,7 +4,7 @@ import java.io.IOException; // input/output errors
 import java.util.List; // lists of objects
 
 public class PlayerLocation {
-    private static LocationData locationData; // loaded json data
+    public static LocationData locationData; // loaded json data
 
     public static void location() {
         loadLocationData(); // load json data
@@ -16,7 +16,7 @@ public class PlayerLocation {
         System.out.println("Description: " + currentLocation.getDescription());
     }
 
-    private static void loadLocationData() {
+    static void loadLocationData() {
         ObjectMapper objectMapper = new ObjectMapper(); // json reader
 
         try {
@@ -26,7 +26,7 @@ public class PlayerLocation {
         }
     }
 
-    private static class LocationData {
+    public static class LocationData {
         private List<Location> locations; // list of locations
 
         public List<Location> getLocations() {
@@ -38,7 +38,9 @@ public class PlayerLocation {
         }
     }
 
-    private static class Location {
+    public static class Location {
+        int x;
+        int y;
         private String location;
         private String description;
 
@@ -56,6 +58,23 @@ public class PlayerLocation {
 
         public void setDescription(String description) {
             this.description = description;
+        }
+
+        //added x-y axis to location
+        public int getX() {
+            return Movement.getX_Axis();
+        }
+
+        public int getY() {
+            return Movement.getY_Axis();
+        }
+
+        public void setX(int x) {
+            this.x = x;
+        }
+
+        public void setY(int y) {
+            this.y = y;
         }
     }
 }

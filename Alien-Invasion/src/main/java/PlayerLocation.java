@@ -11,36 +11,35 @@ import java.lang.reflect.Type; // Type for deserialization of List
 // also to ensure class has full control over how data is accessed/modified
 public class PlayerLocation {
     private final static String filePath = "Alien-Invasion/static/gameLocations.json";
-    public static LocationData locationData; // variable to store loaded JSON data
+    public static LocationsData locationData; // variable to store loaded JSON data
 
     public static void loadLocationData(String filePath) {// load
         Gson gson = new Gson(); // create a Gson instance for JSON parsing
         try (Reader reader = new FileReader(filePath)) { // try to read JSON data from file
             Type locationListType = new TypeToken<List<Location>>() {
             }.getType();
-            System.out.println(locationListType);
             List<Location> locations = gson.fromJson(reader, locationListType); // parse JSON data
-            locationData = new LocationData();
+            locationData = new LocationsData();
             locationData.setLocations(locations);
-            System.out.println(locations);// set the parsed list to LocationData instance
         } catch (IOException e) { // handle input output errors
             System.err.println("Error loading location data: " + e.getMessage());
         } catch (JsonSyntaxException e) { // handle invalid JSON data
             System.err.println("Error parsing JSON data: " + e.getMessage());
         }
+        //reader automatically closed when program exits try block
     }
 
-    public static class LocationData {
-        public List<PlayerLocation.Location> locations; // list of locations
 
+    public static class LocationsData {
+        public List<PlayerLocation.Location> locations; // list of locations
         public List<PlayerLocation.Location> getLocations() {
             return locations;
         }
-
         public void setLocations(List<PlayerLocation.Location> locations) {
             this.locations = locations;
         }
     }
+
 
     public static class Location {
         int x;
@@ -100,10 +99,5 @@ public class PlayerLocation {
         System.out.println("description: " + currentLocation.getDescription());
         System.out.println("coordinates: (" + currentLocation.getX() + ", " + currentLocation.getY() + ")");
 
-    }
-
-    public static void main(String[] args) {
-        PlayerLocation.loadLocationData(filePath);
-        PlayerLocation.displayCurrentLocation();
     }
 }

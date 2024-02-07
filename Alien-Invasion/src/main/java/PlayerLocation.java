@@ -10,7 +10,7 @@ import java.lang.reflect.Type; // Type for deserialization of List
 // nested functions within class for encapsulation purposes
 // also to ensure class has full control over how data is accessed/modified
 public class PlayerLocation {
-    final static String filePath = "Alien-Invasion/static/gameLocations.json";
+    final static String filePath = "./static/gameLocations.json";
     public static LocationsData locationData; // variable to store loaded JSON data
 
     public static void loadLocationData(String filePath) {// load

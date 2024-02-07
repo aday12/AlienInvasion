@@ -60,7 +60,7 @@ public class CharacterStatus {
         }
     }
 
-    private static void displayCharacterStatus() {
+    public static void displayCharacterStatus() {
         CharacterState previousState = null;
 
         //while (true) {
@@ -78,22 +78,24 @@ public class CharacterStatus {
         // Display character status
         System.out.println("Character Status:");
         System.out.println("  Health: " + health);
-        System.out.println("  Location: " + currentLocal);
-        System.out.println("  Inventory: " + Arrays.toString(inventoryStats));
+        //TODO fix location data
+        System.out.println("  Location: Command Center");
+
+        System.out.println("  Inventory: " + Inventory.getInventory());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         String formattedTime = currentTime.format(formatter);
         System.out.println("  Time: " + formattedTime);
 
-        if (locationData == null) {
-            System.out.println("Error: Location data is not loaded.");
-            return;
-        }
+//        if (locationData == null) {
+//            System.out.println("Error: Location data is not loaded.");
+//            return;
+//        }
 
         // Retrieve the current location
         PlayerLocation.Location currentLocation = getCurrentLocationObject();
 
         // Display current location
-        System.out.println("Coordinates: (" + currentLocation.getX() + ", " + currentLocation.getY() + ")");
+        System.out.println("Coordinates: (" + Movement.getX_Axis() + ", " + Movement.getY_Axis() + ")");
 
         previousState = currentState;
 

@@ -1,7 +1,8 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Controller {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         Scanner scan = new Scanner(System.in);
         TitleScreen.displayAsciiArt("./static/title.txt");
 
@@ -11,6 +12,7 @@ public class Controller {
 //            Help.displayHelp();
             while (isGame) {
                // PlayerLocation.location();
+                CharacterStatus.displayCharacterStatus();
                 System.out.println("What's your next move Commander?");
                 System.out.print("> ");
                 String userInput = scan.nextLine().trim();

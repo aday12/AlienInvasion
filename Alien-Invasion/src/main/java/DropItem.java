@@ -8,5 +8,6 @@ public class DropItem {
         currentCoordinates.add(Movement.getY_Axis());
         Inventory.getInventory().remove(userInput.trim());
         ItemsJSON.setCoordinates(currentCoordinates, userInput);
+        System.out.println("You dropped " + userInput + " at coordinates " + currentCoordinates);
     }
 }

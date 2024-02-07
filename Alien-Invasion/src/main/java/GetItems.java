@@ -2,6 +2,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class GetItems {
         String[] input = userInput.trim().split(" ");
 
         if (input[0].equalsIgnoreCase("get")) {
+            String message = "That is not something you can pickup...";
             try {
                 Gson gson = new Gson();
 
@@ -32,16 +34,17 @@ public class GetItems {
                 ArrayList<Integer> currentCoordinates = new ArrayList<>();
                 currentCoordinates.add(Movement.getX_Axis());
                 currentCoordinates.add(Movement.getY_Axis());
-                String message = "That is not something you can pickup...";
+
                 for (Map.Entry<String, JsonElement> entry : entrySet) {
                     String itemName = entry.getKey();
-                    if (itemName.equalsIgnoreCase(input[1]) && !itemName.toLowerCase().equals("north")
+                    if (itemName.equalsIgnoreCase(input[1]) && !itemName.equalsIgnoreCase("north")
                             && !itemName.equalsIgnoreCase("south")
                             && !itemName.equalsIgnoreCase("east")
                             && !itemName.equalsIgnoreCase("west")) {
 //                        System.out.println(currentCoordinates);
 //                        System.out.println(ItemsJSON.getCoordinates(input[1]));
-                        if (ItemsJSON.getCoordinates(input[1]) == currentCoordinates) {
+//                        if (ItemsJSON.getCoordinates(input[1])) { //== currentCoordinates
+//                            System.out.println(currentCoordinates);
                             ArrayList<Integer> newCoords = new ArrayList<>();
                             newCoords.add(5000);
                             newCoords.add(5000);
@@ -51,14 +54,14 @@ public class GetItems {
                             message = ("You have added " + itemName +  " into your inventory");
                             ItemsJSON.setCoordinates(newCoords,input[1]);
                             break;
-                        }
+
                     }
                 }
-                System.out.println(message);
+            System.out.println(message);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        return isItem;
+        } return isItem;
+
     }
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.time.LocalTime;
@@ -6,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class CharacterStatus {
-    private static PlayerLocation.LocationData locationData;
+    private static PlayerLocation.LocationsData locationData;
 
     public CharacterStatus() {
         PlayerLocation.loadLocationData(PlayerLocation.filePath);
@@ -98,22 +97,6 @@ public class CharacterStatus {
 
         previousState = currentState;
 
-//        try {
-//            Thread.sleep(1000); // Sleep for 1 second wait
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-=======
-//import java.time.LocalTime;
-//
-//public class CharacterStatus {
-//
-//    public static String getPlayerLocation(int x, int y) {
-//        for (PlayerLocation.Location location : PlayerLocation.locationData.getLocations()) {
-//            if (location.getX() == x && location.getY() == y) {
-//                return PlayerLocation.Location.getLocation();
-//            }
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
-//        }
 
     }
 
@@ -150,19 +133,5 @@ public class CharacterStatus {
 
         return 0; // Default index if no matching location is found
     }
-    public static void main(String[] args) {
-        CharacterStatus characterStatus = new CharacterStatus();
 
-        // Initial display
-        System.out.println("Initial State:");
-        characterStatus.displayCharacterStatus();
-
-        // Simulate movements and location changes
-        Movement.processCommand("go south");
-        Movement.processCommand("go south");
-        Movement.processCommand("go west");
-        Movement.processCommand("go west");
-        CharacterStatus.displayCharacterStatus();
-    }
 }
-

@@ -10,29 +10,17 @@ import java.lang.reflect.Type; // Type for deserialization of List
 // nested functions within class for encapsulation purposes
 // also to ensure class has full control over how data is accessed/modified
 public class PlayerLocation {
-<<<<<<< HEAD
     final static String filePath = "Alien-Invasion/static/gameLocations.json";
-    public static LocationData locationData; // variable to store loaded JSON data
-=======
-    private final static String filePath = "Alien-Invasion/static/gameLocations.json";
     public static LocationsData locationData; // variable to store loaded JSON data
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
 
-    public static void loadLocationData (String filePath){// load
+    public static void loadLocationData(String filePath) {// load
         Gson gson = new Gson(); // create a Gson instance for JSON parsing
         try (Reader reader = new FileReader(filePath)) { // try to read JSON data from file
             Type locationListType = new TypeToken<List<Location>>() {
             }.getType();
-            System.out.println(locationListType);
             List<Location> locations = gson.fromJson(reader, locationListType); // parse JSON data
-<<<<<<< HEAD
-            locationData = new LocationData();
-            locationData.setLocations(locations);
-            System.out.println(locations);// set the parsed list to LocationData instance
-=======
             locationData = new LocationsData();
             locationData.setLocations(locations);
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
         } catch (IOException e) { // handle input output errors
             System.err.println("Error loading location data: " + e.getMessage());
         } catch (JsonSyntaxException e) { // handle invalid JSON data
@@ -41,22 +29,12 @@ public class PlayerLocation {
         //reader automatically closed when program exits try block
     }
 
-<<<<<<< HEAD
-    public static class LocationData {
-        public List<PlayerLocation.Location> locations; // list of locations
-
-        public List<PlayerLocation.Location> getLocations() {
-            return locations;
-        }
-
-=======
 
     public static class LocationsData {
         public List<PlayerLocation.Location> locations; // list of locations
         public List<PlayerLocation.Location> getLocations() {
             return locations;
         }
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
         public void setLocations(List<PlayerLocation.Location> locations) {
             this.locations = locations;
         }
@@ -68,16 +46,11 @@ public class PlayerLocation {
         int y;
         public String location; // location name
         public String description; // location description
-        public Location(String location);
 
-
-        public Location(String location, String description, int xValue, int yValue) {
-
-<<<<<<< HEAD
-=======
+        public Location(String Location){  //basic constructor called
+        }
         public Location(String location, String description, int xValue, int yValue) {
             this.location = location;
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
             this.description = description;
             this.x = xValue;
             this.y = yValue;
@@ -116,11 +89,7 @@ public class PlayerLocation {
         }
     }
 
-<<<<<<< HEAD
-    public static void displayCurrentLocation () {
-=======
     public static void displayCurrentLocation() {
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
         if (locationData == null) { // if not loaded, load data
             loadLocationData(filePath);
         }
@@ -132,13 +101,5 @@ public class PlayerLocation {
         System.out.println("description: " + currentLocation.getDescription());
         System.out.println("coordinates: (" + currentLocation.getX() + ", " + currentLocation.getY() + ")");
 
-<<<<<<< HEAD
-    }
-
-    public static void main(String[] args) {
-        PlayerLocation.loadLocationData(filePath);
-        PlayerLocation.displayCurrentLocation();
-=======
->>>>>>> 4f7fd4147fb409d60b7c4ba034391b173f154b76
     }
 }

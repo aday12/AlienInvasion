@@ -111,7 +111,7 @@ public class ItemsJSON {
 //            description = specificItemObject.get("description").getAsString();
 
             String coords = String.valueOf(coordinates).replace("[", "").replace("]", "").strip();
-            System.out.println(coords);
+//            System.out.println(coords);
 
             specificItemObject.addProperty("coordinates", coords);
 

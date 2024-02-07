@@ -36,13 +36,13 @@ public class GetItems {
                 for (Map.Entry<String, JsonElement> entry : entrySet) {
                     String itemName = entry.getKey();
                     if (itemName.equalsIgnoreCase(input[1])) {
-                        System.out.println(currentCoordinates);
-                        System.out.println(ItemsJSON.getCoordinates(input[1]));
+//                        System.out.println(currentCoordinates);
+//                        System.out.println(ItemsJSON.getCoordinates(input[1]));
                         if (ItemsJSON.getCoordinates(input[1]) == currentCoordinates) {
                             ArrayList<Integer> newCoords = new ArrayList<>();
                             newCoords.add(5000);
                             newCoords.add(5000);
-                            System.out.println("IT should work");
+//                            System.out.println("IT should work");
                             isItem = true;
                             Inventory.setInventory(input[1]);
                             ItemsJSON.setCoordinates(newCoords,input[1]);

@@ -35,7 +35,7 @@ public class GetItems {
                 String message = "That is not something you can pickup...";
                 for (Map.Entry<String, JsonElement> entry : entrySet) {
                     String itemName = entry.getKey();
-                    if (itemName.equalsIgnoreCase(input[1]) && !itemName.toLowerCase().equals("north")
+                    if (itemName.equalsIgnoreCase(input[1]) && !itemName.equalsIgnoreCase("north")
                             && !itemName.equalsIgnoreCase("south")
                             && !itemName.equalsIgnoreCase("east")
                             && !itemName.equalsIgnoreCase("west")) {

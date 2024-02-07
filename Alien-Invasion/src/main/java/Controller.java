@@ -11,6 +11,7 @@ public class Controller {
 //            Help.displayHelp();
             while (isGame) {
                // PlayerLocation.location();
+                CharacterStatus.displayCharacterStatus();
                 System.out.println("What's your next move Commander?");
                 System.out.print("> ");
                 String userInput = scan.nextLine().trim();

@@ -21,7 +21,7 @@ class GetItemsTest {
 
     @Test
     void isItemInteractableShouldReturnFalse(){
-        String getNothing = "get nothing";
+        String getNothing = "get north";
         assertFalse(GetItems.isItemInteractable(getNothing));
     }
 

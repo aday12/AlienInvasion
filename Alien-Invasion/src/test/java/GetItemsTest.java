@@ -1,4 +1,7 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,5 +23,20 @@ class GetItemsTest {
     void isItemInteractableShouldReturnFalse(){
         String getNothing = "get nothing";
         assertFalse(GetItems.isItemInteractable(getNothing));
+    }
+
+    @Test
+    void isItemInteractactableShouldReturnTrueIfCoordinatesAre5000() {
+        String getNote = "get note";
+//        System.out.println(Movement.getX_Axis());
+//        System.out.println(Movement.getY_Axis());
+//        System.out.println(ItemsJSON.getCoordinates("note"));
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(5000);
+        expected.add(5000);
+        GetItems.isItemInteractable(getNote);
+        System.out.println(Inventory.getInventory());
+        assertEquals(expected, ItemsJSON.getCoordinates("note"));
+//        System.out.println(GetItems.getInventory());
     }
 }

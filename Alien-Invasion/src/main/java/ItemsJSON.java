@@ -68,6 +68,7 @@ public class ItemsJSON {
 //            description = specificItemObject.get("description").getAsString();
 
             String coord = specificItemObject.get("coordinates").getAsString().trim();
+            System.out.println(coord);
 
             if (!coord.equals("null")) {
                 String[] coords = coord.split(",");
@@ -77,9 +78,9 @@ public class ItemsJSON {
                     coordinates.add(c);
                 }
             }
-            else {
-                coordinates = null;
-            }
+//            else {
+//                coordinates = null;
+//            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

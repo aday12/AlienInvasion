@@ -5,6 +5,7 @@ class JSONInteractionTest {
     @Test
     void jsonReader() {
         ExamineItems.examine("analyze board");
-        ItemsJSON.jsonReader(ExamineItems.getInteractable());
+        ItemsJSON.getDescription(ExamineItems.getInteractable());
+        System.out.println(ItemsJSON.getCoordinates("item"));
     }
 }

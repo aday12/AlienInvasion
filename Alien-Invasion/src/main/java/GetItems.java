@@ -2,8 +2,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,17 +26,31 @@ public class GetItems {
                 JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
                 JsonObject itemsObject = commandObject.getAsJsonObject("items");
 
+
+
                 Set<Map.Entry<String, JsonElement>> entrySet = itemsObject.entrySet();
+                ArrayList<Integer> currentCoordinates = new ArrayList<>();
+                currentCoordinates.add(Movement.getX_Axis());
+                currentCoordinates.add(Movement.getY_Axis());
 
                 for (Map.Entry<String, JsonElement> entry : entrySet) {
                     String itemName = entry.getKey();
                     if (itemName.equalsIgnoreCase(input[1])) {
-                        isItem = true;
-                        Inventory.setInventory(input[1]);
-                        break;
+                        System.out.println(currentCoordinates);
+                        System.out.println(ItemsJSON.getCoordinates(input[1]));
+                        if (ItemsJSON.getCoordinates(input[1]) == currentCoordinates) {
+                            ArrayList<Integer> newCoords = new ArrayList<>();
+                            newCoords.add(5000);
+                            newCoords.add(5000);
+                            System.out.println("IT should work");
+                            isItem = true;
+                            Inventory.setInventory(input[1]);
+                            ItemsJSON.setCoordinates(newCoords,input[1]);
+                            break;
+                        }
                     }
                 }
-            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

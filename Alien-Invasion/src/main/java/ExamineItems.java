@@ -1,13 +1,3 @@
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Arrays;
-import java.util.Dictionary;
-import java.util.Locale;
-import java.util.Scanner;
-
 public class ExamineItems {
     public static String interactable = "none";
 
@@ -29,7 +19,7 @@ public class ExamineItems {
     private static String handleExamine(String[] userInput) {
         String item = userInput[1];
 
-        interactable = ItemsJSON.jsonReader(item);
+        interactable = ItemsJSON.getDescription(item);
         System.out.println(interactable);
         return interactable;
     }

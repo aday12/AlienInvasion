@@ -5,7 +5,7 @@
 //    public static String getPlayerLocation(int x, int y) {
 //        for (PlayerLocation.Location location : PlayerLocation.locationData.getLocations()) {
 //            if (location.getX() == x && location.getY() == y) {
-//                return location.getLocation();
+//                return PlayerLocation.Location.getLocation();
 //            }
 //        }
 //        return "Unknown location";

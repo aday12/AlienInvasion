@@ -5,7 +5,10 @@ public class TextParser {
         String[] cmd = userInput.split(" ");
 
         if (cmd.length > 1) {
-            if (InvalidInput.checkValidInput(cmd[0]) && InvalidInput.checkValidInput(cmd[1])) {
+            if (userInput.trim().equalsIgnoreCase("display inventory")){
+                Inventory.displayInventory();
+            }
+            else if (InvalidInput.checkValidInput(userInput)) {
                 switch (cmd[0]) {
                     case "go" :
                         Movement.processCommand(userInput);
@@ -19,6 +22,7 @@ public class TextParser {
                 case "quit":
                 case "q":
                     QuitGame.quitGame();
+                    break;
                 case "help":
                 case "h":
                     Help.displayHelp();

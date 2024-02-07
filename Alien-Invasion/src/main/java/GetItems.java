@@ -31,7 +31,7 @@ public class GetItems {
                     String itemName = entry.getKey();
                     if (itemName.equalsIgnoreCase(input[1])) {
                         isItem = true;
-                        Inventory.setInventory(itemName);
+                        Inventory.setInventory(input[1]);
                         break;
                     }
                 }

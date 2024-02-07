@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 
 public class Inventory {
-    private static ArrayList<String> inventory = new ArrayList<>();
+    public static ArrayList<String> inventory = new ArrayList<>();
 
-    public static void displayInventory(String userInput){
-        String[] input = userInput.trim().split(" ");
-        if (userInput.trim().equalsIgnoreCase("display inventory")){
-            System.out.println(getInventory());
+    public static void displayInventory() {
+        if (!inventory.isEmpty()) {
+            for (String i : inventory) {
+                System.out.println(i);
+            }
         }
     }
 

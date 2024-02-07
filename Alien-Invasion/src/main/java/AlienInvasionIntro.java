@@ -1,6 +1,6 @@
 public class AlienInvasionIntro {
 
-    private static final int TypingDelayMs = 0;
+    private static final int TypingDelayMs = 50;
 
     public static void welcome() throws InterruptedException {
 
@@ -14,11 +14,11 @@ public class AlienInvasionIntro {
 
         clearConsole();
         printWithTypewriterEffect(story);
-        clearConsolePause(0);
+        clearConsolePause(1000);
         printWithTypewriterEffect(objective);
-        clearConsolePause(0);
+        clearConsolePause(1000);
         printWithTypewriterEffect(playerIdentity);
-        clearConsolePause(0);
+        clearConsolePause(1000);
         printWithTypewriterEffect(winGame);
         System.out.println("Press enter to continue");
     }

@@ -21,11 +21,7 @@ public class Movement {
         System.out.printf("Player position: (%s,%s)", getX_Axis(), getY_Axis());
     }
 
-
     public static void processCommand(String command) {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Enter 'GO (north/south/west/east)' to move");
-//        String command = scanner.nextLine();
 
         if (command.startsWith("go")) {
             String direction = command.substring(3).trim(); // Extract direction from the command

@@ -47,13 +47,11 @@ public class PlayerLocation {
         int y;
         public String location; // location name
         public String description; // location description
-        public Location(String location){
-            this.location = location;
-        }
+        public Location(String location);
 
 
         public Location(String location, String description, int xValue, int yValue) {
-            this.location = location;
+
             this.description = description;
             this.x = xValue;
             this.y = yValue;
@@ -97,7 +95,7 @@ public class PlayerLocation {
             loadLocationData(filePath);
         }
         List<Location> locations = locationData.getLocations();
-        int currentLocationIndex = 1;
+        int currentLocationIndex = 0;
         Location currentLocation = locations.get(currentLocationIndex);
 
         System.out.println("** Current Location: " + currentLocation.getLocation() + " **");
@@ -107,9 +105,7 @@ public class PlayerLocation {
     }
 
     public static void main(String[] args) {
-
         PlayerLocation.loadLocationData(filePath);
-        PlayerLocation.locationData.locations.get(1).setLocation("Virtual Reality Chamber");
-
-  }
+        PlayerLocation.displayCurrentLocation();
+    }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PC2-AlienInvasion.iml" filepath="$PROJECT_DIR$/.idea/PC2-AlienInvasion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Alien-Invasion/Alien-Invasion.iml" filepath="$PROJECT_DIR$/Alien-Invasion/Alien-Invasion.iml" />
     </modules>
   </component>
 </project>

@@ -38,14 +38,14 @@ public class InvalidInput {
             String[] validCommands = availableCommands.getAsString().toLowerCase().strip().split(",");
 
             boolean validFirstWord = false;
-            for (String command : validCommands){
-                if (userInput[0].equalsIgnoreCase(command.strip())){
-                    validFirstWord =  true;
+            for (String command : validCommands) {
+                if (userInput[0].equalsIgnoreCase(command.strip())) {
+                    validFirstWord = true;
 //                    System.out.println("valid First");
                     break;
                 }
             }
-            if (validFirstWord){
+            if (validFirstWord) {
                 for (String valid : entrySet) {
                     if (userInput[1].equalsIgnoreCase(valid)) {
                         isValid = true;
@@ -56,8 +56,7 @@ public class InvalidInput {
             }
 
 
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 

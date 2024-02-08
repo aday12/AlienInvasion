@@ -2,9 +2,11 @@ package client;
 
 import java.io.IOException; // input/output errors
 import java.util.List; // lists of objects
+
 import com.google.gson.Gson; // import Gson for JSON data handling
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken; // TypeToken for list deserialization
+
 import java.io.Reader; // Reader for file reading
 import java.io.FileReader; // FileReader for reading files
 import java.lang.reflect.Type; // Type for deserialization of List
@@ -34,9 +36,11 @@ public class PlayerLocation {
 
     public static class LocationsData {
         public List<PlayerLocation.Location> locations; // list of locations
+
         public List<PlayerLocation.Location> getLocations() {
             return locations;
         }
+
         public void setLocations(List<PlayerLocation.Location> locations) {
             this.locations = locations;
         }
@@ -49,8 +53,9 @@ public class PlayerLocation {
         public String location; // location name
         public String description; // location description
 
-        public Location(String Location){  //basic constructor called
+        public Location(String Location) {  //basic constructor called
         }
+
         public Location(String location, String description, int xValue, int yValue) {
             this.location = location;
             this.description = description;

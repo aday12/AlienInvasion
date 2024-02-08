@@ -118,9 +118,9 @@ public class ItemsJSON {
 
             specificItemObject.addProperty("coordinates", coords);
 
-            String updatedJson  = new Gson().toJson(jsonObject);
+            String updatedJson = new Gson().toJson(jsonObject);
 
-            try (FileWriter writer = new FileWriter(path)){
+            try (FileWriter writer = new FileWriter(path)) {
                 writer.write(updatedJson);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -130,42 +130,43 @@ public class ItemsJSON {
             e.printStackTrace();
         }
     }
-        public static void setCoordinatesToNull(String item) {
 
-            try {
-                Gson gson = new Gson();
-                // Read JSON data from the file into a JsonObject
-                JsonObject jsonObject = gson.fromJson(new FileReader(path), JsonObject.class);
+    public static void setCoordinatesToNull(String item) {
 
-                // This can remain the same
-                JsonObject locationObject = jsonObject.getAsJsonObject("location");
+        try {
+            Gson gson = new Gson();
+            // Read JSON data from the file into a JsonObject
+            JsonObject jsonObject = gson.fromJson(new FileReader(path), JsonObject.class);
 
-                // We will want to generate this dynamically based on actual player location
-                // client.PlayerLocation.getLocationName()
-                JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
+            // This can remain the same
+            JsonObject locationObject = jsonObject.getAsJsonObject("location");
 
-                // This might be able to remain static... depends on how we want to separate inter-actables
-                JsonObject itemsObject = commandObject.getAsJsonObject("items");
+            // We will want to generate this dynamically based on actual player location
+            // client.PlayerLocation.getLocationName()
+            JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
 
-                // TODO Need to update the remaining items to get what we need
-                // This will need to be dynamic based on whatever player has input
-                JsonObject specificItemObject = itemsObject.getAsJsonObject(item);
+            // This might be able to remain static... depends on how we want to separate inter-actables
+            JsonObject itemsObject = commandObject.getAsJsonObject("items");
+
+            // TODO Need to update the remaining items to get what we need
+            // This will need to be dynamic based on whatever player has input
+            JsonObject specificItemObject = itemsObject.getAsJsonObject(item);
 
 //            description = specificItemObject.get("description").getAsString();
 
-                specificItemObject.addProperty("coordinates", (String) null);
+            specificItemObject.addProperty("coordinates", (String) null);
 
-                String updatedJson  = new Gson().toJson(jsonObject);
+            String updatedJson = new Gson().toJson(jsonObject);
 
-                try (FileWriter writer = new FileWriter(path)){
-                    writer.write(updatedJson);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            } catch (FileNotFoundException e) {
+            try (FileWriter writer = new FileWriter(path)) {
+                writer.write(updatedJson);
+            } catch (IOException e) {
                 e.printStackTrace();
             }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+    }
 
 }

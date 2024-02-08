@@ -17,7 +17,6 @@ public class Movement {
     }
 
 
-
     //methods
     public void startPosition() {
         System.out.printf("Player position: (%s,%s)", getX_Axis(), getY_Axis());
@@ -32,36 +31,37 @@ public class Movement {
             System.out.println("Invalid command!");
         }
     }
+
     public static void movePosition(String direction) {
         System.out.println("Enter (north/south/west/east)");
-            switch (direction.toLowerCase()) {
-                case "north":
-                    y_Axis++;
-                    System.out.println("You are North");
-                    break;
-                case "south":
-                    y_Axis--;
-                    System.out.println("You are South");
-                    break;
-                case "east":
-                    x_Axis++;
-                    System.out.println("You are East");
-                    break;
-                case "west":
-                    x_Axis--;
-                    System.out.println("You are West");
-                    break;
-                default:
-                    System.out.println("Invalid direction!");
-                    return;
-            }
-            System.out.printf("Player moved to position: (%s,%s)", getX_Axis(), getY_Axis());
+        switch (direction.toLowerCase()) {
+            case "north":
+                y_Axis++;
+                System.out.println("You are North");
+                break;
+            case "south":
+                y_Axis--;
+                System.out.println("You are South");
+                break;
+            case "east":
+                x_Axis++;
+                System.out.println("You are East");
+                break;
+            case "west":
+                x_Axis--;
+                System.out.println("You are West");
+                break;
+            default:
+                System.out.println("Invalid direction!");
+                return;
         }
+        System.out.printf("Player moved to position: (%s,%s)", getX_Axis(), getY_Axis());
+    }
 
     @Override
     public String toString() {
         return "client.Movement{" +
-                "x_Axis=" +getX_Axis() +
+                "x_Axis=" + getX_Axis() +
                 ", y_Axis=" + getY_Axis() +
                 '}';
     }

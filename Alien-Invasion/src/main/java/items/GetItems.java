@@ -33,7 +33,6 @@ public class GetItems {
                 JsonObject itemsObject = commandObject.getAsJsonObject("items");
 
 
-
                 Set<Map.Entry<String, JsonElement>> entrySet = itemsObject.entrySet();
                 ArrayList<Integer> currentCoordinates = new ArrayList<>();
                 currentCoordinates.add(Movement.getX_Axis());
@@ -49,23 +48,24 @@ public class GetItems {
 //                        System.out.println(json.ItemsJSON.getCoordinates(input[1]));
 //                        if (json.ItemsJSON.getCoordinates(input[1])) { //== currentCoordinates
 //                            System.out.println(currentCoordinates);
-                            ArrayList<Integer> newCoords = new ArrayList<>();
-                            newCoords.add(5000);
-                            newCoords.add(5000);
+                        ArrayList<Integer> newCoords = new ArrayList<>();
+                        newCoords.add(5000);
+                        newCoords.add(5000);
 //                            System.out.println("IT should work");
-                            isItem = true;
-                            Inventory.setInventory(input[1]);
-                            message = ("You have added " + itemName +  " into your inventory");
-                            ItemsJSON.setCoordinates(newCoords,input[1]);
-                            break;
+                        isItem = true;
+                        Inventory.setInventory(input[1]);
+                        message = ("You have added " + itemName + " into your inventory");
+                        ItemsJSON.setCoordinates(newCoords, input[1]);
+                        break;
 
                     }
                 }
-            System.out.println(message);
+                System.out.println(message);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } return isItem;
+        }
+        return isItem;
 
     }
 }

@@ -1,8 +1,11 @@
 package text_parser;
 
-import items.DropItem;
-import items.ExamineItems;
-import items.GetItems;
+import client.Help;
+import client.InvalidInput;
+import client.Movement;
+import client.QuitGame;
+import items.*;
+
 
 import java.io.IOException;
 
@@ -50,9 +53,6 @@ public class TextParser {
                 case "help":
                 case "h":
                     Help.displayHelp();
-                case "skip":
-                case "s":
-//                    throw Skip.methodSkipException("moving along");
             }
         }
         else {

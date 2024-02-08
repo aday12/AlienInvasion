@@ -1,5 +1,10 @@
 package controller;
 
+import client.CharacterStatus;
+import client.NewGame;
+import client.TitleScreen;
+import text_parser.TextParser;
+
 import java.io.IOException;
 import java.util.Scanner;
 

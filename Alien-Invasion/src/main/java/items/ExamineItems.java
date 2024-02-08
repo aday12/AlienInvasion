@@ -1,5 +1,7 @@
 package items;
 
+import json.ItemsJSON;
+
 public class ExamineItems {
     public static String interactable = "none";
 

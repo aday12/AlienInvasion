@@ -1,5 +1,7 @@
 package items;
 
+import client.Movement;
+import json.ItemsJSON;
 import java.io.IOException;
 import java.util.ArrayList;
 

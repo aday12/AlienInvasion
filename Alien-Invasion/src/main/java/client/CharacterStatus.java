@@ -1,5 +1,7 @@
 package client;
 
+import items.Inventory;
+
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.time.LocalTime;

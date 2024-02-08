@@ -22,16 +22,7 @@ public class TextParser {
                 System.out.println(Inventory.getInventory());
             }
             else if (InvalidInput.checkValidInput(userInput)) {
-//                switch (cmd[0]) {
-//                    case "go" :
-//                        client.Movement.processCommand(userInput);
-//                    case "get":
-//                        items.GetItems.isItemInteractable(userInput);
-//                    case "drop":
-//                        items.DropItem.dropItem(userInput);
-//                    default :
-//                        items.ExamineItems.examine(userInput);
-//                }
+
                 if (cmd[0].equalsIgnoreCase("go")){
                     Movement.processCommand(userInput);
                 }
@@ -41,8 +32,15 @@ public class TextParser {
                 else if (cmd[0].equalsIgnoreCase("drop")){
                     DropItem.dropItem(cmd[1]);
                 }
-                else if (cmd[0].equalsIgnoreCase("examine")){
+                else if (cmd[0].equalsIgnoreCase("examine") ||
+                        cmd[0].equalsIgnoreCase("look") ||
+                        cmd[0].equalsIgnoreCase("inspect") ||
+                        cmd[0].equalsIgnoreCase("interact") ||
+                        cmd[0].equalsIgnoreCase("analyze")){
                     ExamineItems.examine(userInput);
+                }
+                else if (cmd[0].equalsIgnoreCase("talk")){
+                    TalkNPC.interactNPC(userInput);
                 }
             }
         }

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ItemsJSON {
-    private static String path = "./static/items.json";
+    private static String path = "Alien-Invasion/resourceFile/items.json";
 
     public static String getDescription(String item) {
 

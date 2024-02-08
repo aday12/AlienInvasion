@@ -17,7 +17,7 @@ public class Help {
 
 
     public static void displayHelp() {
-        String path = "./static/items.json";
+        String path = "Alien-Invasion/resourceFile/items.json";
         try {
             Gson gson = new Gson();
 

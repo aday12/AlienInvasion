@@ -1,8 +1,10 @@
 package items;
 
+import client.Movement;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import json.ItemsJSON;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +16,7 @@ import java.util.Set;
 public class GetItems {
 
     public static boolean isItemInteractable(String userInput) {
-        String path = "./static/items.json";
+        String path = "Alien-Invasion/resourceFile/items.json";
         boolean isItem = false;
         String[] input = userInput.trim().split(" ");
 

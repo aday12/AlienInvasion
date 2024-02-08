@@ -17,7 +17,7 @@ public class InvalidInput {
     private static boolean isValid = false;
 
     public static boolean checkValidInput(String word) {
-        String path = "./static/items.json";
+        String path = "Alien-Invasion/resourceFile/items.json";
         String[] userInput = word.toLowerCase().split(" ");
 
         isValid = false;

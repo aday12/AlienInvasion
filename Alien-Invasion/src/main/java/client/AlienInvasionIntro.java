@@ -1,3 +1,5 @@
+package client;
+
 public class AlienInvasionIntro {
 
     private static final int TypingDelayMs = 50;

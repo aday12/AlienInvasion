@@ -41,7 +41,7 @@ public class TitleScreenTest {
         // Redirect the standard output stream to capture the printed content
         System.setOut(new PrintStream(outContent));
 
-//        TitleScreen.displayTitleScreen(testFilePath.toString());
+//        client.TitleScreen.displayTitleScreen(testFilePath.toString());
 
         // Assert the content printed to the console
         String expectedOutput = "TestFileContent";  // Replace with the expected content

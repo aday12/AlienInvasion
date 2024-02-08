@@ -1,3 +1,4 @@
+import json.ItemsJSON;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ class ItemsJSONTest {
 
 //    @Test
 //    void setCoordinatesToNull() {
-//        ItemsJSON.setCoordinatesToNull("note");
-//        assertEquals("null", ItemsJSON.getCoordinates("note"));
+//        json.ItemsJSON.setCoordinatesToNull("note");
+//        assertEquals("null", json.ItemsJSON.getCoordinates("note"));
 //    }
 }

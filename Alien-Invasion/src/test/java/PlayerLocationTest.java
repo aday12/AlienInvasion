@@ -1,4 +1,5 @@
 
+import client.PlayerLocation;
 import org.junit.Test;
 import java.io.IOException;
 import com.google.gson.JsonSyntaxException;

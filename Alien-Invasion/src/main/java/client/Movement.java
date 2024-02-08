@@ -1,3 +1,5 @@
+package client;
+
 import java.util.Scanner;
 
 public class Movement {
@@ -58,7 +60,7 @@ public class Movement {
 
     @Override
     public String toString() {
-        return "Movement{" +
+        return "client.Movement{" +
                 "x_Axis=" +getX_Axis() +
                 ", y_Axis=" + getY_Axis() +
                 '}';

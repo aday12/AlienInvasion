@@ -1,3 +1,5 @@
+package client;
+
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.time.LocalTime;
@@ -81,7 +83,7 @@ public class CharacterStatus {
         //TODO fix location data
         System.out.println("  Location: Command Center");
 
-        System.out.println("  Inventory: " + Inventory.getInventory());
+        System.out.println("  items.Inventory: " + Inventory.getInventory());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         String formattedTime = currentTime.format(formatter);
         System.out.println("  Time: " + formattedTime);

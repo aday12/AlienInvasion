@@ -1,3 +1,5 @@
+import items.GetItems;
+import items.Inventory;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -20,8 +22,8 @@ class InventoryTest {
 
     @Test
     void displayInventory() {
-//        Inventory.setInventory("goo");
-//        Inventory.setInventory("note");
+//        items.Inventory.setInventory("goo");
+//        items.Inventory.setInventory("note");
         GetItems.isItemInteractable("get goo");
         Inventory.displayInventory();
     }

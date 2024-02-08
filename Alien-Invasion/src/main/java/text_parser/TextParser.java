@@ -1,3 +1,9 @@
+package text_parser;
+
+import items.DropItem;
+import items.ExamineItems;
+import items.GetItems;
+
 import java.io.IOException;
 
 public class TextParser {
@@ -13,13 +19,13 @@ public class TextParser {
             else if (InvalidInput.checkValidInput(userInput)) {
 //                switch (cmd[0]) {
 //                    case "go" :
-//                        Movement.processCommand(userInput);
+//                        client.Movement.processCommand(userInput);
 //                    case "get":
-//                        GetItems.isItemInteractable(userInput);
+//                        items.GetItems.isItemInteractable(userInput);
 //                    case "drop":
-//                        DropItem.dropItem(userInput);
+//                        items.DropItem.dropItem(userInput);
 //                    default :
-//                        ExamineItems.examine(userInput);
+//                        items.ExamineItems.examine(userInput);
 //                }
                 if (cmd[0].equalsIgnoreCase("go")){
                     Movement.processCommand(userInput);

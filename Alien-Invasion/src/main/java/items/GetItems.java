@@ -1,3 +1,5 @@
+package items;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
@@ -42,8 +44,8 @@ public class GetItems {
                             && !itemName.equalsIgnoreCase("east")
                             && !itemName.equalsIgnoreCase("west")) {
 //                        System.out.println(currentCoordinates);
-//                        System.out.println(ItemsJSON.getCoordinates(input[1]));
-//                        if (ItemsJSON.getCoordinates(input[1])) { //== currentCoordinates
+//                        System.out.println(json.ItemsJSON.getCoordinates(input[1]));
+//                        if (json.ItemsJSON.getCoordinates(input[1])) { //== currentCoordinates
 //                            System.out.println(currentCoordinates);
                             ArrayList<Integer> newCoords = new ArrayList<>();
                             newCoords.add(5000);

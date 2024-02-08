@@ -1,3 +1,5 @@
+package items;
+
 public class ExamineItems {
     public static String interactable = "none";
 

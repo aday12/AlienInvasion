@@ -1,3 +1,5 @@
+import items.DropItem;
+import items.Inventory;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -18,7 +20,7 @@ class DropItemTest {
     void dropItemsNothingDropsWhenItemNotInInventory() throws IOException {
         Inventory.setInventory("goo");
         Inventory.setInventory("book");
-//        DropItem.dropItem("north");
+//        items.DropItem.dropItem("north");
         assertTrue(Inventory.getInventory().contains("goo"));
         assertTrue(Inventory.getInventory().contains("book"));
     }

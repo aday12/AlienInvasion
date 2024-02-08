@@ -1,3 +1,5 @@
+package client;
+
 import java.io.IOException; // input/output errors
 import java.util.List; // lists of objects
 import com.google.gson.Gson; // import Gson for JSON data handling

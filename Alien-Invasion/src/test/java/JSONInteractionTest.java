@@ -1,3 +1,5 @@
+import items.ExamineItems;
+import json.ItemsJSON;
 import org.junit.jupiter.api.Test;
 
 class JSONInteractionTest {

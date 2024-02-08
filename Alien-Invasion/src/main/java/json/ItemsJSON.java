@@ -1,3 +1,5 @@
+package json;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
@@ -25,7 +27,7 @@ public class ItemsJSON {
             JsonObject locationObject = jsonObject.getAsJsonObject("location");
 
             // We will want to generate this dynamically based on actual player location
-            // PlayerLocation.getLocationName()
+            // client.PlayerLocation.getLocationName()
             JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
 
             // This might be able to remain static... depends on how we want to separate inter-actables
@@ -55,7 +57,7 @@ public class ItemsJSON {
             JsonObject locationObject = jsonObject.getAsJsonObject("location");
 
             // We will want to generate this dynamically based on actual player location
-            // PlayerLocation.getLocationName()
+            // client.PlayerLocation.getLocationName()
             JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
 
             // This might be able to remain static... depends on how we want to separate inter-actables
@@ -99,7 +101,7 @@ public class ItemsJSON {
             JsonObject locationObject = jsonObject.getAsJsonObject("location");
 
             // We will want to generate this dynamically based on actual player location
-            // PlayerLocation.getLocationName()
+            // client.PlayerLocation.getLocationName()
             JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
 
             // This might be able to remain static... depends on how we want to separate inter-actables
@@ -139,7 +141,7 @@ public class ItemsJSON {
                 JsonObject locationObject = jsonObject.getAsJsonObject("location");
 
                 // We will want to generate this dynamically based on actual player location
-                // PlayerLocation.getLocationName()
+                // client.PlayerLocation.getLocationName()
                 JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
 
                 // This might be able to remain static... depends on how we want to separate inter-actables

@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 
-class GameTextJSONParser {
+public class GameTextJSONParser {
     public static void jsonReader() {
         String path = "./static/storyText.json";
 

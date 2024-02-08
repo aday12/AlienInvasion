@@ -1,8 +1,10 @@
 package items;
 
+import client.Movement;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import json.ItemsJSON;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

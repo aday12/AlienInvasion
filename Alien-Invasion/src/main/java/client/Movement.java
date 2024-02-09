@@ -24,38 +24,38 @@ public class Movement {
 
     public static void processCommand(String command) {
 
-        if (command.startsWith("go")) {
-            String direction = command.substring(3).trim(); // Extract direction from the command
-            movePosition(direction);
-        } else {
-            System.out.println("Invalid command!");
-        }
+//        if (command.startsWith("go")) {
+//            String direction = command.substring(3).trim(); // Extract direction from the command
+            movePosition(command);
+//        } else {
+//            System.out.println("Invalid command!");
+//        }
     }
 
     public static void movePosition(String direction) {
-        System.out.println("Enter (north/south/west/east)");
+//        System.out.println("Enter (north/south/west/east)");
         switch (direction.toLowerCase()) {
             case "north":
                 y_Axis++;
-                System.out.println("You are North");
+//                    System.out.println("You are North");
                 break;
             case "south":
                 y_Axis--;
-                System.out.println("You are South");
+//                    System.out.println("You are South");
                 break;
             case "east":
                 x_Axis++;
-                System.out.println("You are East");
+//                    System.out.println("You are East");
                 break;
             case "west":
                 x_Axis--;
-                System.out.println("You are West");
+//                    System.out.println("You are West");
                 break;
             default:
                 System.out.println("Invalid direction!");
-                return;
+//                    return;
         }
-        System.out.printf("Player moved to position: (%s,%s)", getX_Axis(), getY_Axis());
+//            System.out.printf("Player moved to position: (%s,%s)", getX_Axis(), getY_Axis());
     }
 
     @Override

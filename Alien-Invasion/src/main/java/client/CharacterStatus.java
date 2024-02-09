@@ -77,7 +77,7 @@ public class CharacterStatus {
         CharacterState currentState = new CharacterState(health, currentLocal, inventoryStats, currentTime);
 
         // Move the cursor to the start of the output
-        System.out.print("\033[H");
+//        System.out.print("\033[H");
 
         // Display character status
         System.out.println("Character Status:");

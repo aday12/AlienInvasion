@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Controller {
     public static void main(String[] args) throws InterruptedException, IOException {
         Scanner scan = new Scanner(System.in);
-        TitleScreen.displayAsciiArt("Alien-Invasion/static/title.txt");
+        TitleScreen.displayAsciiArt("./static/title.txt");
 
         if (NewGame.gameStart()) {
 //            client.AlienInvasionIntro.welcome();

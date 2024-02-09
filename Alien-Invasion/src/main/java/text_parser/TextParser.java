@@ -48,6 +48,8 @@ public class TextParser {
                 }
                 else if (cmd[0].equalsIgnoreCase("examine")){
                     ExamineItems.examine(userInput);
+                } else {
+                    System.out.println("Sorry that was a invalid action");
                 }
             }
         }
@@ -60,6 +62,8 @@ public class TextParser {
                 case "help":
                 case "h":
                     Help.displayHelp();
+                default:
+                    System.out.println("Sorry that was an unrecognizable command.");
             }
         }
         else {

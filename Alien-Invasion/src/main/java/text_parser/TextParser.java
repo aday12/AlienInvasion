@@ -1,9 +1,6 @@
 package text_parser;
 
-import client.Help;
-import client.InvalidInput;
-import client.Movement;
-import client.QuitGame;
+import client.*;
 import items.DropItem;
 import items.ExamineItems;
 import items.GetItems;
@@ -48,6 +45,8 @@ public class TextParser {
                 case "help":
                 case "h":
                     Help.displayHelp();
+                case "map":
+                    Map.showMap();
                 default:
                     System.out.println("Sorry that was an unrecognizable command.");
             }

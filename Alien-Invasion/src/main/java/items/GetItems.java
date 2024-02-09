@@ -16,7 +16,7 @@ import java.util.Set;
 public class GetItems {
 
     public static boolean isItemInteractable(String userInput) {
-        String path = "Alien-Invasion/resourceFile/items.json";
+        String path = "./static/items.json";
         boolean isItem = false;
         String[] input = userInput.trim().split(" ");
 

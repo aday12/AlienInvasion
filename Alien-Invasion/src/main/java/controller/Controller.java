@@ -19,7 +19,7 @@ public class Controller {
             client.CLS.clear();
 //            client.Help.displayHelp();
             while (isGame) {
-               // client.PlayerLocation.location();
+                // client.PlayerLocation.location();
                 CharacterStatus.displayCharacterStatus();
                 System.out.println("What's your next move Commander?");
                 System.out.print("> ");

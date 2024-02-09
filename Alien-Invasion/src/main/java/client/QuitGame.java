@@ -11,8 +11,7 @@ public class QuitGame {
 
         if (userInput.equals("yes")) {
             System.exit(0);
-        }
-        else {
+        } else {
             return;
         }
     }

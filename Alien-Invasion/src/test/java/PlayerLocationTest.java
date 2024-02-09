@@ -1,8 +1,11 @@
 
 import client.PlayerLocation;
 import org.junit.Test;
+
 import java.io.IOException;
+
 import com.google.gson.JsonSyntaxException;
+
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

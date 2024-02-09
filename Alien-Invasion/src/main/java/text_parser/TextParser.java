@@ -18,19 +18,20 @@ public class TextParser {
         String[] cmd = userInput.split(" ");
 
         if (cmd.length > 1) {
-            if (userInput.trim().equalsIgnoreCase("display inventory")){
+            if (userInput.trim().equalsIgnoreCase("display inventory")) {
                 System.out.println(Inventory.getInventory());
             }
             else if (InvalidInput.checkValidInput(userInput)) {
 
                 if (cmd[0].equalsIgnoreCase("go")){
                     Movement.processCommand(userInput);
-                }
-                else if (cmd[0].equalsIgnoreCase("get")){
+                } else if (cmd[0].equalsIgnoreCase("get")) {
                     GetItems.isItemInteractable(userInput);
-                }
-                else if (cmd[0].equalsIgnoreCase("drop")){
+                } else if (cmd[0].equalsIgnoreCase("drop")) {
                     DropItem.dropItem(cmd[1]);
+                }
+                else if (cmd[0].equalsIgnoreCase("talk")){
+                    TalkNPC.interactNPC(userInput);
                 }
                 else if (cmd[0].equalsIgnoreCase("examine") ||
                         cmd[0].equalsIgnoreCase("look") ||
@@ -41,12 +42,8 @@ public class TextParser {
                 } else {
                     System.out.println("Sorry that was a invalid action");
                 }
-                else if (cmd[0].equalsIgnoreCase("talk")){
-                    TalkNPC.interactNPC(userInput);
-                }
             }
-        }
-        else if (cmd.length == 1) {
+        } else if (cmd.length == 1) {
             switch (cmd[0]) {
                 case "quit":
                 case "q":
@@ -58,8 +55,7 @@ public class TextParser {
                 default:
                     System.out.println("Sorry that was an unrecognizable command.");
             }
-        }
-        else {
+        } else {
             System.out.println("Sorry that was an unrecognizable text length.");
         }
     }

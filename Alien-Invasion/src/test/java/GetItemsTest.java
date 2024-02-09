@@ -22,7 +22,7 @@ class GetItemsTest {
     }
 
     @Test
-    void isItemInteractableShouldReturnFalse(){
+    void isItemInteractableShouldReturnFalse() {
         String getNothing = "get north";
         assertFalse(GetItems.isItemInteractable(getNothing));
     }

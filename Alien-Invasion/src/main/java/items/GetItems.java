@@ -55,7 +55,8 @@ public class GetItems {
             }System.out.println(message);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+            }
+
         return isItem;
 
     }

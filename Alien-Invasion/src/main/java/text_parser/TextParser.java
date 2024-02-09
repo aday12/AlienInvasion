@@ -19,7 +19,7 @@ public class TextParser {
         String[] cmd = userInput.split(" ");
 
         if (cmd.length > 1) {
-            if (userInput.trim().equalsIgnoreCase("display inventory")){
+            if (userInput.trim().equalsIgnoreCase("display inventory")) {
                 System.out.println(Inventory.getInventory());
             }
 
@@ -39,8 +39,7 @@ public class TextParser {
                     System.out.println("Sorry that was a invalid action");
                 }
             }
-        }
-        else if (cmd.length == 1) {
+        } else if (cmd.length == 1) {
             switch (cmd[0]) {
                 case "quit":
                 case "q":
@@ -52,8 +51,7 @@ public class TextParser {
                 default:
                     System.out.println("Sorry that was an unrecognizable command.");
             }
-        }
-        else {
+        } else {
             System.out.println("Sorry that was an unrecognizable text length.");
         }
     }

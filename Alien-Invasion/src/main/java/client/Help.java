@@ -34,10 +34,9 @@ public class Help {
             Set<String> entrySet = items.keySet();
 
             System.out.println("Interactable: " + entrySet);
-            System.out.println("Actions: "  + availableCommands);
+            System.out.println("Actions: " + availableCommands);
 
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }

@@ -16,6 +16,7 @@ public class Controller {
         if (NewGame.gameStart()) {
 //            client.AlienInvasionIntro.welcome();
             boolean isGame = true;
+            client.CLS.clear();
 //            client.Help.displayHelp();
             while (isGame) {
                 // client.PlayerLocation.location();
@@ -24,8 +25,9 @@ public class Controller {
                 System.out.print("> ");
                 String userInput = scan.nextLine().trim();
                 TextParser.textParser(userInput);
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+//                System.out.print("\033[H\033[2J");
+//                System.out.flush();
+                client.CLS.clear();
             }
         }
     }

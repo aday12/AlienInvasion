@@ -44,4 +44,14 @@ class SynonymsJsonTest {
     void dropSynonymsShouldReturnFalseWhenWordNotInJson() {
         assertFalse(SynonymsJson.dropSynonyms("blah"));
     }
+
+    @Test
+    void talkSynonymsShouldReturnTrueWhenWordInJson() {
+        assertTrue(SynonymsJson.talkSynonyms("dialogue"));
+    }
+    @Test
+    void talkSynonymsShouldReturnFalseWhenWordNotInJson() {
+        assertFalse(SynonymsJson.talkSynonyms("blah"));
+    }
+
 }

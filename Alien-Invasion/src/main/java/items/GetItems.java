@@ -20,52 +20,43 @@ public class GetItems {
         boolean isItem = false;
         String[] input = userInput.trim().split(" ");
 
-        if (input[0].equalsIgnoreCase("get")) {
-            String message = "That is not something you can pickup...";
-            try {
-                Gson gson = new Gson();
-
-                // Read JSON data from the file into a JsonObject
-                JsonObject jsonObject = gson.fromJson(new FileReader(path), JsonObject.class);
-
-                JsonObject locationObject = jsonObject.getAsJsonObject("location");
-                JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
-                JsonObject itemsObject = commandObject.getAsJsonObject("items");
-
-
-
-                Set<Map.Entry<String, JsonElement>> entrySet = itemsObject.entrySet();
-                ArrayList<Integer> currentCoordinates = new ArrayList<>();
-                currentCoordinates.add(Movement.getX_Axis());
-                currentCoordinates.add(Movement.getY_Axis());
-
-                for (Map.Entry<String, JsonElement> entry : entrySet) {
-                    String itemName = entry.getKey();
-                    if (itemName.equalsIgnoreCase(input[1]) && !itemName.equalsIgnoreCase("north")
-                            && !itemName.equalsIgnoreCase("south")
-                            && !itemName.equalsIgnoreCase("east")
-                            && !itemName.equalsIgnoreCase("west")) {
-//                        System.out.println(currentCoordinates);
-//                        System.out.println(json.ItemsJSON.getCoordinates(input[1]));
-//                        if (json.ItemsJSON.getCoordinates(input[1])) { //== currentCoordinates
-//                            System.out.println(currentCoordinates);
-                            ArrayList<Integer> newCoords = new ArrayList<>();
-                            newCoords.add(5000);
-                            newCoords.add(5000);
-//                            System.out.println("IT should work");
-                            isItem = true;
-                            Inventory.setInventory(input[1]);
-                            message = ("You have added " + itemName +  " into your inventory");
-                            ItemsJSON.setCoordinates(newCoords,input[1]);
-                            break;
-
-                    }
+        String message = "That is not something you can pickup...";
+        try {
+            Gson gson = new Gson();
+            // Read JSON data from the file into a JsonObject
+            JsonObject jsonObject = gson.fromJson(new FileReader(path), JsonObject.class);
+            JsonObject locationObject = jsonObject.getAsJsonObject("location");
+            JsonObject commandObject = locationObject.getAsJsonObject("Command Center");
+            JsonObject itemsObject = commandObject.getAsJsonObject("items");
+            Set<Map.Entry<String, JsonElement>> entrySet = itemsObject.entrySet();
+            ArrayList<Integer> currentCoordinates = new ArrayList<>();
+            currentCoordinates.add(Movement.getX_Axis());
+            currentCoordinates.add(Movement.getY_Axis());
+            for (Map.Entry<String, JsonElement> entry : entrySet) {
+                String itemName = entry.getKey();
+                if (itemName.equalsIgnoreCase(input[1]) && !itemName.equalsIgnoreCase("north")
+                        && !itemName.equalsIgnoreCase("south")
+                        && !itemName.equalsIgnoreCase("east")
+                        && !itemName.equalsIgnoreCase("west")) {
+//                       System.out.println(currentCoordinates);
+//                       System.out.println(json.ItemsJSON.getCoordinates(input[1]));
+//                       if (json.ItemsJSON.getCoordinates(input[1])) { //== currentCoordinates
+//                           System.out.println(currentCoordinates);
+                    ArrayList<Integer> newCoords = new ArrayList<>();
+                    newCoords.add(5000);
+                    newCoords.add(5000);
+//                           System.out.println("IT should work");
+                    isItem = true;
+                    Inventory.setInventory(input[1]);
+                    message = ("You have added " + itemName +  " into your inventory");
+                    ItemsJSON.setCoordinates(newCoords,input[1]);
+                    break;
                 }
-            System.out.println(message);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } return isItem;
+            }System.out.println(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return isItem;
 
     }
 }

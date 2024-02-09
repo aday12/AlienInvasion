@@ -33,6 +33,8 @@ public class TextParser {
                     DropItem.dropItem(cmd[1]);
                 } else if (SynonymsJson.examineSynonyms(cmd[0])) {
                     ExamineItems.examine(userInput);
+                } else if (SynonymsJson.talkSynonyms(cmd[0])){
+                    TalkNPC.interactNPC(userInput);
                 } else {
                     System.out.println("Sorry that was a invalid action");
                 }

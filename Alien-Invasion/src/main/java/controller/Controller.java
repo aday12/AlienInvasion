@@ -1,8 +1,6 @@
 package controller;
 
-import client.CharacterStatus;
-import client.NewGame;
-import client.TitleScreen;
+import client.*;
 import text_parser.TextParser;
 
 import java.io.IOException;
@@ -16,18 +14,20 @@ public class Controller {
         if (NewGame.gameStart()) {
 //            client.AlienInvasionIntro.welcome();
             boolean isGame = true;
-            client.CLS.clear();
+            CLS.clear();
 //            client.Help.displayHelp();
             while (isGame) {
                // client.PlayerLocation.location();
+                CLS.clear();
                 CharacterStatus.displayCharacterStatus();
                 System.out.println("What's your next move Commander?");
                 System.out.print("> ");
                 String userInput = scan.nextLine().trim();
                 TextParser.textParser(userInput);
+
 //                System.out.print("\033[H\033[2J");
 //                System.out.flush();
-                client.CLS.clear();
+//                client.CLS.clear();
             }
         }
     }

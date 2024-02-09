@@ -107,4 +107,29 @@ public class SynonymsJson {
         }
         return isSynonym;
     }
+    public static boolean talkSynonyms(String userInput){
+        boolean isSynonym = false;
+        String path = "./static/talkSynonyms.json";
+
+        try {
+            Gson gson = new Gson();
+
+            JsonArray jsonArray = gson.fromJson(new FileReader(path), JsonArray.class);
+
+            for (JsonElement element : jsonArray) {
+                if (element.isJsonPrimitive()) {
+                    String synonym = element.getAsString();
+//                    System.out.println(synonym);
+                    if (userInput.equalsIgnoreCase(synonym)) {
+                        isSynonym = true;
+                        break;
+                    }
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return isSynonym;
+    }
 }

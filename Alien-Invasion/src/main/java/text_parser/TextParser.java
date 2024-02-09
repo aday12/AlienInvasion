@@ -4,15 +4,11 @@ import client.Help;
 import client.InvalidInput;
 import client.Movement;
 import client.QuitGame;
-
 import items.DropItem;
 import items.ExamineItems;
 import items.GetItems;
 import items.Inventory;
-
-import items.*;
-
-
+import json.SynonymsJson;
 
 import java.io.IOException;
 
@@ -26,27 +22,16 @@ public class TextParser {
             if (userInput.trim().equalsIgnoreCase("display inventory")){
                 System.out.println(Inventory.getInventory());
             }
+
             else if (InvalidInput.checkValidInput(userInput)) {
-//                switch (cmd[0]) {
-//                    case "go" :
-//                        client.Movement.processCommand(userInput);
-//                    case "get":
-//                        items.GetItems.isItemInteractable(userInput);
-//                    case "drop":
-//                        items.DropItem.dropItem(userInput);
-//                    default :
-//                        items.ExamineItems.examine(userInput);
-//                }
-                if (cmd[0].equalsIgnoreCase("go")){
-                    Movement.processCommand(userInput);
-                }
-                else if (cmd[0].equalsIgnoreCase("get")){
+
+                if (SynonymsJson.goSynonyms(cmd[0])) {
+                    Movement.processCommand(cmd[1]);
+                } else if (SynonymsJson.getSynonyms(cmd[0])) {
                     GetItems.isItemInteractable(userInput);
-                }
-                else if (cmd[0].equalsIgnoreCase("drop")){
+                } else if (SynonymsJson.dropSynonyms(cmd[0])) {
                     DropItem.dropItem(cmd[1]);
-                }
-                else if (cmd[0].equalsIgnoreCase("examine")){
+                } else if (SynonymsJson.examineSynonyms(cmd[0])) {
                     ExamineItems.examine(userInput);
                 } else {
                     System.out.println("Sorry that was a invalid action");

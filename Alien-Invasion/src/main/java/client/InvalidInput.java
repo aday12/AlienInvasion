@@ -47,7 +47,8 @@ public class InvalidInput {
             }
             if (validFirstWord) {
                 for (String valid : entrySet) {
-                    if (userInput[1].equalsIgnoreCase(valid)) {
+                    if (userInput[1].equalsIgnoreCase(valid) || userInput[1].equalsIgnoreCase("general") ||
+                            userInput[1].equalsIgnoreCase("robot")) {
                         isValid = true;
 //                        System.out.println("valid  second");
                         break;

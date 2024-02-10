@@ -34,7 +34,7 @@ public class TextParser {
                 } else if (SynonymsJson.examineSynonyms(cmd[0])) {
                     ExamineItems.examine(userInput);
                 } else if (SynonymsJson.talkSynonyms(cmd[0])){
-                    TalkNPC.interactNPC(userInput);
+                    TalkNPC.interactNPC(cmd[1]);
                 } else {
                     System.out.println("Sorry that was a invalid action");
                 }
@@ -48,6 +48,7 @@ public class TextParser {
                 case "help":
                 case "h":
                     Help.displayHelp();
+                    break;
                 default:
                     System.out.println("Sorry that was an unrecognizable command.");
             }

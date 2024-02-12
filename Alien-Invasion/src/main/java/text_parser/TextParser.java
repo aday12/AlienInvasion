@@ -46,6 +46,9 @@ public class TextParser {
                 case "h":
                     Help.displayHelp();
                     break;
+                case "map":
+                    Map.showMap();
+                    break;
                 default:
                     System.out.println("Sorry that was an unrecognizable command.");
             }

@@ -1,10 +1,12 @@
 package client;
 
+import java.io.IOException;
+
 public class AlienInvasionIntro {
 
     private static final int TypingDelayMs = 50;
 
-    public static void welcome() throws InterruptedException {
+    public static void welcome() throws InterruptedException, IOException {
 
         String story = "Welcome, Space Commander, to the thrilling adventure of 'Alien Invasion.' In this cosmic journey, you will assume the role of the fearless commander of Starship TLG Alactica, embarking on a mission that will challenge your wits and courage. As you decipher signals, navigate interstellar politics, and unveil ancient cosmic secrets, the destiny of humanity will rest in your hands. Are you ready to embark on this epic quest to shape the future of our world?";
 
@@ -38,18 +40,13 @@ public class AlienInvasionIntro {
         System.out.flush();
     }
 
-    public static void clearConsolePause(int ClearDelayMs) {
+    public static void clearConsolePause(int ClearDelayMs) throws IOException, InterruptedException {
         try {
             Thread.sleep(ClearDelayMs);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        clearConsole();
-        try {
-            Thread.sleep(ClearDelayMs);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        CLS.clear();
     }
 
 }

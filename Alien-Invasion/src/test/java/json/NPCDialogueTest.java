@@ -8,6 +8,12 @@ class NPCDialogueTest {
 
     @Test
     void randDialogue() {
-        NPCDialogue.randDialogue();
+        NPCDialogue.randDialogue("general");
+    }
+
+    @Test
+    void robotReturnsSpecificDialogue() {
+        NPCDialogue.randDialogue("robot");
+
     }
 }

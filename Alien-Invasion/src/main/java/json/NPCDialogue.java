@@ -17,7 +17,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class NPCDialogue {
-    public static void randDialogue() {
+    public static void randDialogue(String userIn) {
         String path = "./static/dialogue.json";
         Gson gson = new Gson();
         ArrayList<String> arrayList = new ArrayList<>();
@@ -27,8 +27,7 @@ public class NPCDialogue {
 
             Set<String> npc = jsonObject.keySet();
 
-
-            JsonArray generalArray = jsonObject.getAsJsonArray("general");
+            JsonArray generalArray = jsonObject.getAsJsonArray(userIn);
             if (generalArray != null) {
                 for (int i = 0; i < generalArray.size(); i++) {
                     String dialog = generalArray.get(i).getAsString();
@@ -44,7 +43,7 @@ public class NPCDialogue {
     }
 
     private static void rand(ArrayList<String> arrayList) {
-        double rand = (Math.random() * (arrayList.size()));
+        double rand = (Math.random() * (arrayList.size() - 1));
         int randNum = (int) Math.round(rand);
         System.out.println(arrayList.get(randNum));
     }
